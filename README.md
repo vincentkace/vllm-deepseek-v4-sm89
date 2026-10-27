@@ -11,6 +11,11 @@
 当前代码为 vLLM `0.28.1rc1.dev517` 开发版，配套 FlashInfer `0.6.18`。已验证配置包括
 **4×/8× RTX 4090 48GB** 和 **4× RTX PRO 6000 Blackwell 96GB**。
 
+本分支移植上游 PR #56299，修复 DeepSeek V4.1 通过 Responses API 接收
+`input_text` / `output_text` 时的错误。应用方式、实际验证范围以及近期上游优化对
+L20 × 8（SM89）的适用性见 [修复与 L20 验证说明](docs/deployment/l20-sm89-responses-153.md)。
+本分支未完成 L20 整模型或性能验收，Release wheel 尚未重建。
+
 ## 支持矩阵
 
 | GPU 架构 | 已验证 GPU | DeepSeek-V4.1-Flash | DeepSeek-V4-Flash | DeepSeek-V4-Flash-Vision-Exp | GLM-5.3-Flash |
